@@ -102,7 +102,7 @@ vim.g.have_nerd_font = false
 vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
@@ -541,8 +541,8 @@ require('lazy').setup({
         -- clangd = {},
         gopls = {},
         pyright = {},
-        html = {},
         prettier = {},
+        eslint = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -628,8 +628,10 @@ require('lazy').setup({
       formatters_by_ft = {
         lua = { 'stylua' },
         python = { 'pyright' },
-        javascript = { 'prettier' },
-        html = { 'html' },
+        javascript = { 'prettier', 'eslint' },
+        javascriptreact = { 'prettier', 'eslint' },
+        html = { 'prettier' },
+        css = { 'prettier' },
         -- Conform can also run multiple formatters sequentially
         -- python = { 'isort', 'black' },
         --
